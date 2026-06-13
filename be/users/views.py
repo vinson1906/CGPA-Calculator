@@ -4,6 +4,4 @@ from django.shortcuts import render
 from django.http import JsonResponse
 
 def home(request):
-    return JsonResponse({
-        "message": "Django Backend Working"
-    })
+    return render(request, 'index.html')

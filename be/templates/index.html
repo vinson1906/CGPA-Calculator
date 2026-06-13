@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Django UI</title>
+    <style>
+        .container {
+            background-color: red;
+            color: white;
+            height: 350px;
+            width: 400px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* width: 280px; */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            cursor: pointer
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="head">Card 1</h1>
+            <p class="para"> this is the card content just for testing purpose</p>
+            <button onclick="showMessage()" class="btn">
+                click me
+            </button>
+        </div>
+    </div>
+</body>
+<script>
+    const showMessage = () => {
+        Swal.fire({
+            title: "Confirmation",
+            text: "Are you greater than 18 years old?",
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+            cancelButtonText: "No"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                alert("Welcome to the jungle");
+            } else {
+                alert("You are not allowed to enter the jungle");
+            }
+        });
+
+    }
+</script>
+
+</html>
